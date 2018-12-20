@@ -19,9 +19,9 @@ public class NewsletterController {
     private NewsletterService newsletterService;
 
     @GetMapping("/newsletter")
-    public HttpStatus createNewsletter(@RequestParam("email") final String email){
+    public HttpStatus createNewsletter(@RequestParam("email") final String email, HttpStatus ok){
         newsletterService.insertNewsLetter(email);
-        return HttpStatus.OK;
+        return ok;
     }
     @PostMapping(value = "/newsletter")
     public HttpStatus addNewsletter(@RequestParam("email")final String email){
