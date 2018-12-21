@@ -1,4 +1,4 @@
-package com.sda.model;
+package com.sda.CarRentalTesting.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

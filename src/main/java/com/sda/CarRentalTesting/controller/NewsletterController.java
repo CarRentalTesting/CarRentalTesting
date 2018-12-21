@@ -1,8 +1,7 @@
-package com.sda.controller;
+package com.sda.CarRentalTesting.controller;
 
-import com.sda.entity.NewsletterEntity;
-import com.sda.model.NewsletterModel;
-import com.sda.service.NewsletterService;
+import com.sda.CarRentalTesting.model.NewsletterModel;
+import com.sda.CarRentalTesting.service.NewsletterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -28,18 +27,29 @@ public class NewsletterController {
         newsletterService.insertNewsLetter(email);
         return HttpStatus.OK;
     }
+    @GetMapping(value ="/newsletter/{id}")
+    public NewsletterModel getNewsletterById(@PathVariable("id")final Long id){
+        return newsletterService.getNewsletterById(id);
+    }
     @GetMapping(value="/newsletters")
     public List<NewsletterModel> getAllNewsletters() {
         List<NewsletterModel> newsletterModels = newsletterService.getAllNewsletters();
         return newsletterModels;
 
     }
-//    @PutMapping(value = "/newsletter/{id}")
-//    public HttpStatus deleteNewsletterById(@Valid @RequestBody final NewsletterModel newsletterModel){
-//        newsletterService.updateNewsletter(newsletterModel);
-//        return HttpStatus.OK;
-//    }
-//    @DeleteMapping(value = "/newsletter/{id}")
+ @PutMapping(value = "/newsletter/{id}")
+
+
+    public HttpStatus updateNewsletterById(@Valid @RequestBody final NewsletterModel newsletterModel){
+        newsletterService.updateNewsletterById(newsletterModel);
+        return HttpStatus.OK;
+    }
+    @DeleteMapping(value = "/newsletter/{id}")
+    public HttpStatus deleteNewsletterById(@PathVariable("id") final Long id){
+        newsletterService.deleteNewsletterById(id);
+        return HttpStatus.OK;
+    }
+
 //    public HttpStatus deleteNewsletterById
 
 }

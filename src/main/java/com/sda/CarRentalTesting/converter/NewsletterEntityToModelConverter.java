@@ -1,7 +1,7 @@
 package com.sda.CarRentalTesting.converter;
 
-import com.sda.entity.NewsletterEntity;
-import com.sda.model.NewsletterModel;
+import com.sda.CarRentalTesting.entity.NewsletterEntity;
+import com.sda.CarRentalTesting.model.NewsletterModel;
 import org.springframework.stereotype.Component;
 
 @Component
