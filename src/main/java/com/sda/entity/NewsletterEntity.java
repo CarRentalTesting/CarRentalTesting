@@ -34,5 +34,4 @@ public class NewsletterEntity {
     @Column(length = 50, nullable = false, unique = true)
     private String email;
 
-
 }

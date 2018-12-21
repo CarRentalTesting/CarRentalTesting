@@ -15,5 +15,6 @@ public interface NewsletterRepository extends JpaRepository<NewsletterEntity, Lo
 
     @Override
     Optional<NewsletterEntity> findById(Long aLong);
+
 }
 

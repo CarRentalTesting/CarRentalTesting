@@ -32,4 +32,32 @@ public class NewsletterService {
                 (newsletterEntityToModelConverter::toModel).collect(Collectors.toList());
         return newsletterModels;
     }
+
+    public NewsletterModel getNewsletterById(final long id) {
+        Optional<NewsletterEntity> entity = newsletterRepository.findById(id);
+        if (entity.isPresent()) {
+            return newsletterEntityToModelConverter.toModel(entity.get());
+        } else {
+            throw new RuntimeException("Newsletter not found");
+        }
+    }
+
+    public void deleteNewsletter(Long id) {
+        Optional<NewsletterEntity> entity = newsletterRepository.findById(id);
+        if (entity.isPresent()) {
+            newsletterRepository.delete(entity.get());
+        } else {
+            throw new RuntimeException("Newsletter not found");
+        }
+    }
+
+    public void updateNewsletter(NewsletterModel newsletterModel) {
+        Optional<NewsletterEntity> entity = newsletterRepository.findById(newsletterModel.getId());
+        if (entity.isPresent()) {
+            entity.get().setEmail(newsletterModel.getEmail());
+            newsletterRepository.save(entity.get());
+        } else {
+            throw new RuntimeException("Newsletter not found");
+        }
+    }
 }
