@@ -1,7 +1,7 @@
-package com.sda.controller;
+package com.sda.CarRentalTesting.controller;
 
-import com.sda.model.NewsletterModel;
-import com.sda.service.NewsletterService;
+import com.sda.CarRentalTesting.model.NewsletterModel;
+import com.sda.CarRentalTesting.service.NewsletterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-public class NewletterRestController {
+@RestController
+@RequestMapping (value ="/api")
+public class NewsletterRestController {
 
     @Autowired
     NewsletterService newsletterService;

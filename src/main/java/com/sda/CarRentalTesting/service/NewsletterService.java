@@ -1,9 +1,9 @@
-package com.sda.service;
+package com.sda.CarRentalTesting.service;
 
 import com.sda.CarRentalTesting.converter.NewsletterEntityToModelConverter;
-import com.sda.entity.NewsletterEntity;
-import com.sda.model.NewsletterModel;
-import com.sda.repository.NewsletterRepository;
+import com.sda.CarRentalTesting.entity.NewsletterEntity;
+import com.sda.CarRentalTesting.model.NewsletterModel;
+import com.sda.CarRentalTesting.repository.NewsletterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

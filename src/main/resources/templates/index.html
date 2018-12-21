@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.ork">
+<head>
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<p th:text="'Hello' + ${user}"/>
+
+<h1>Newsletter form</h1>
+
+<form action="#" th:action="@{/newsletter}" th:object="${newsletter}" method="post">
+    <p>Email: <input type="text" th:field="*{email}"></p>
+    <p>
+        <input type="submit" value="Subscribe"/>
+        <input type="reset" value="Reset"/>
+    </p>
+</form>
+
+
+</body>
+</html>
